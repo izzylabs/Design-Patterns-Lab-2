@@ -1,19 +1,19 @@
 import { Product } from "../shop";
 
-export interface FoodFactory {
-  createChicken(): Chicken;
-  createFish(): Fish;
-  createBeef(): Beef;
+export interface IFoodFactory {
+  createChicken(): IChicken;
+  createFish(): IFish;
+  createBeef(): IBeef;
 }
 
-export interface Chicken extends Product {
+export interface IChicken extends Product {
   getExpirationDate(): Date;
 }
 
-export interface Fish extends Product {
+export interface IFish extends Product {
   getExpirationDate(): Date;
 }
 
-export interface Beef extends Product {
+export interface IBeef extends Product {
   getExpirationDate(): Date;
 }
