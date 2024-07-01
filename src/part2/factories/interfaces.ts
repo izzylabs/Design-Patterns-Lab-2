@@ -13,7 +13,7 @@ export interface IChicken extends Product {
 export interface IFish extends Product {
   getExpirationDate(): Date;
 }
-
+  
 export interface IBeef extends Product {
   getExpirationDate(): Date;
 }
