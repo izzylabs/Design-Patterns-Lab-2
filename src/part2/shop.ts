@@ -1,7 +1,7 @@
 import { createProducts } from "./createProducts";
 import {
-  CreationSortingStrategy,
-  ExpirationSortingStrategy,
+  CreationDateSortingStrategy,
+  ExpirationDateSortingStrategy,
   NameSortingStrategy,
   Strategy,
 } from "./strategy/strategy";
@@ -38,9 +38,9 @@ const products = createProducts();
 
 const nameStrategy = new NameSortingStrategy();
 
-const expirationStrategy = new ExpirationSortingStrategy();
+const expirationStrategy = new ExpirationDateSortingStrategy();
 
-const creationStrategy = new CreationSortingStrategy();
+const creationStrategy = new CreationDateSortingStrategy();
 
 products.forEach((product) => shop.addProduct(product));
 

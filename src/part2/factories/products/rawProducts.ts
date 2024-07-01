@@ -1,6 +1,6 @@
-import { Beef, Chicken, Fish } from "../interfaces";
+import { IBeef, IChicken, IFish } from "../interfaces";
 
-export class RawChicken implements Chicken {
+export class RawChicken implements IChicken {
   getExpirationDate() {
     return new Date();
   }
@@ -16,7 +16,7 @@ export class RawChicken implements Chicken {
   }
 }
 
-export class RawFish implements Fish {
+export class RawFish implements IFish {
   getExpirationDate() {
     return new Date();
   }
@@ -32,7 +32,7 @@ export class RawFish implements Fish {
   }
 }
 
-export class RawBeef implements Beef {
+export class RawBeef implements IBeef {
   getExpirationDate() {
     return new Date();
   }
@@ -45,5 +45,39 @@ export class RawBeef implements Beef {
 
   getName(): string {
     return "raw beef";
+  }
+}
+foodFactory.ts
+typescript
+Copy code
+import {
+  CookedBeef,
+  CookedChicken,
+  CookedFish,
+} from "./cookedProducts";
+import { RawBeef, RawChicken, RawFish } from "./rawProducts";
+import { IFoodFactory } from "../interfaces";
+
+export class RawFoodFactory implements IFoodFactory {
+  createChicken() {
+    return new RawChicken();
+  }
+  createFish() {
+    return new RawFish();
+  }
+  createBeef() {
+    return new RawBeef();
+  }
+}
+
+export class CookedFoodFactory implements IFoodFactory {
+  createChicken() {
+    return new CookedChicken();
+  }
+  createFish() {
+    return new CookedFish();
+  }
+  createBeef() {
+    return new CookedBeef();
   }
 }
